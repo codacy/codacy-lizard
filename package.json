@@ -1,0 +1,47 @@
+{
+  "name": "codacy-lizard",
+  "version": "1.0.0",
+  "author": "Codacy",
+  "description": "Template repository for new public repositories.",
+  "homepage": "https://github.com/codacy/codacy-lizard#readme",
+  "bugs": {
+    "url": "https://github.com/codacy/codacy-lizard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codacy/codacy-lizard.git"
+  },
+  "license": "Apache-2.0",
+  "main": "dist/src/index.js",
+  "directories": {
+    "test": "./src/test",
+    "docs": "docs",
+    "src": "src"
+  },
+  "scripts": {
+    "build": "tsc --showConfig && tsc",
+    "build:docker": "docker build -t codacy-lizard:dev .",
+    "build:docker:m1": "npm run build:docker -- --platform linux/amd64",
+    "lint": "eslint --fix --ext .ts ./src",
+    "test": "mocha",
+    "preupgrade": "npx npm-check-updates -u -x eslint && npx npm-check-updates -u -t minor eslint",
+    "upgrade": "npm install"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "mocha": "^10.4.0",
+    "npm-check-updates": "^16.14.20",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0"
+  }
+}
