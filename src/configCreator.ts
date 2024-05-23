@@ -13,8 +13,8 @@ export const getLizardOptions = async function (
 ): Promise<LizardOptions> {
   debug("config: creating")
 
-  if (![toolName, `metrics-${toolName}`].includes(codacyrc.tools[0]?.name))
-    throw new Error("Tool in codacyrc is not Lizard")
+  if (!codacyrc || ![toolName, `metrics-${toolName}`].includes(codacyrc.tools?.[0]?.name))
+    throw new Error("Error in codacyrc file")
 
   // get options for the tool from the codacyrc
   const patterns = codacyrc.tools[0].patterns || []
@@ -22,9 +22,16 @@ export const getLizardOptions = async function (
     patterns.map((p) => [p.patternId, p.parameters[0]?.value]),
   )
 
+  debug(
+    `engine: list of ${codacyrc.files.length} files (or globs) to process and options used`,
+  )
+  debug(codacyrc.files)
+  debug(thresholds)
+  debug(patterns)
+
   return {
     files: codacyrc.files,
     thresholds,
-    returnMetrics: !!codacyrc.tools[0].patterns,
+    returnMetrics: !!patterns,
   }
 }

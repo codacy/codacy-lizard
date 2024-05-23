@@ -33,12 +33,12 @@ export const runLizardCommand = (
 ): Promise<LizardResults> => {
   // create a file with the list of files to analyze
   const filesList = options.files.join("\n")
-  const filesListPath = "/filesList.txt"
+  const filesListPath = "/codacy/filesList.txt"
   fs.writeFileSync(filesListPath, filesList)
 
   // run lizard command
   return new Promise((resolve, reject) => {
-    exec(`lizard -f ${filesListPath}}`, (error, stdout, stderr) => {
+    exec(`lizard -f ${filesListPath}`, (error, stdout, stderr) => {
       if (error) {
         reject(error)
       }
@@ -73,10 +73,13 @@ const parseLizardResults = (output: string): LizardResults => {
   idx += 2
 
   while (idx < lines.length && !lines[idx].includes("file analyzed.")) {
-    const [nloc, ccn, tokens, params, length, location] = lines[idx]
+    const line = lines[idx]
       .replaceAll(/\s+/g, " ")
+      .replaceAll(/@/g, " ")
+      .trim()
       .split(" ")
-    const [name, fromToLine, file] = location.split("@")
+
+    const [nloc, ccn, tokens, params, length, name, fromToLine, file] = line
     const [fromLine, toLine] = fromToLine.split("-")
 
     results.methods.push({
@@ -106,9 +109,12 @@ const parseLizardResults = (output: string): LizardResults => {
   idx += 2
 
   while (idx < lines.length && lines[idx].trim() !== "") {
-    const [nloc, avgNloc, avgCcn, avgTokens, methodsCount, file] = lines[idx]
+    const line = lines[idx]
       .replaceAll(/\s+/g, " ")
+      .trim()
       .split(" ")
+
+    const [nloc, avgNloc, avgCcn, avgTokens, methodsCount, file] = line
 
     results.files.push({
       file,

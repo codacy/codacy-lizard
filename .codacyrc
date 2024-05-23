@@ -1,7 +1,25 @@
 {
   "tools": [
     {
-      "name": "lizard"
+      "name": "lizard",
+      "patterns": [
+        {
+          "patternId": "ccn-medium",
+          "parameters": [
+            {
+              "name": "threshold",
+              "value": 1
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "files": [
+    "/src/dist/src/configCreator.js",
+    "/src/dist/src/engineImpl.js",
+    "/src/dist/src/lizard.js",
+    "/src/dist/src/lizardIssuesEngine.js",
+    "/src/dist/src/logging.js"
   ]
 }

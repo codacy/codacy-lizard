@@ -10,20 +10,7 @@ export const lizardIssuesEngine: Engine = async function (
 ): Promise<ToolResult[]> {
   debug("engine: starting")
 
-  if (!codacyrc || codacyrc.tools?.[0]?.name !== toolName) {
-    throw new Error("codacyrc is not defined")
-  }
-
-  const srcDirPath = "/src"
   const lizardOptions = await getLizardOptions(codacyrc)
-  const { files, ...options } = lizardOptions
-
-  debug(
-    `engine: list of ${files.length} files (or globs) to process in "${srcDirPath}" and options used`,
-  )
-  debug(files)
-  debug(options)
-
   const results = await getLizardIssues(lizardOptions)
 
   debug("engine: finished")
