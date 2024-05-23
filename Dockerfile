@@ -18,7 +18,6 @@ RUN pip install lizard &&\
 
 RUN adduser -u 2004 -D docker
 
-COPY package.json package-lock.json ./
 COPY --from=builder --chown=docker:docker dist dist
 COPY --from=builder --chown=docker:docker docs docs
 COPY --chmod=+x entrypoint.sh entrypoint.sh

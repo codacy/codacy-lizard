@@ -3,6 +3,7 @@
     "esModuleInterop": true,
     "incremental": true,
     "lib": [
+      "ES2022",
       "ES6",
       "DOM"
     ],

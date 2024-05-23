@@ -2,7 +2,12 @@
   "name": "codacy-lizard",
   "version": "1.0.0",
   "author": "Codacy",
-  "description": "Template repository for new public repositories.",
+  "description": "Lizard Tool for Codacy.",
+  "keywords": [
+    "codacy",
+    "lizard",
+    "linter"
+  ],
   "homepage": "https://github.com/codacy/codacy-lizard#readme",
   "bugs": {
     "url": "https://github.com/codacy/codacy-lizard/issues"
@@ -34,6 +39,9 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "codacy-seed": "2.2.2"
+  },
+  "devDependencies": {
     "@stylistic/eslint-plugin": "^2.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",

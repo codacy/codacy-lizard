@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "checkJs": false,
+    "exactOptionalPropertyTypes": false,
+    "allowArbitraryExtensions": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "declaration": false,
+    "noEmit": true,
+    "noEmitOnError": true,
+    "strict": false,
+    "lib": [
+      "ES2020",
+      "ES2021",
+      "ES2022",
+      "DOM",
+      "ESNext"
+    ],
+    "target": "ESNext",
+    "disableReferencedProjectLoad": true,
+    "disableSolutionSearching": true,
+    "noErrorTruncation": true,
+    "pretty": false,
+    "skipLibCheck": false,
+    "sourceMap": false,
+    "strictNullChecks": true
+  },
+  "include": [
+    "/src/**/*",
+    "/src/**/*.json"
+  ],
+  "exclude": [
+    "/src/**/node_modules/**/*",
+    "/src/**/build/**/*"
+  ]
+}
