@@ -5,7 +5,7 @@ import { toolName } from "./toolMetadata"
 import { LizardOptions, getLizardOptions } from "./configCreator"
 import { runLizardCommand } from "./lizard"
 
-export const engineImpl: Engine = async function (
+export const lizardIssuesEngine: Engine = async function (
   codacyrc?: Codacyrc,
 ): Promise<ToolResult[]> {
   debug("engine: starting")

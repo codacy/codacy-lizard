@@ -113,7 +113,9 @@ const parseLizardResults = (output: string): LizardResults => {
     results.files.push({
       file,
       nloc: parseInt(nloc),
-      maxCcn: 0,
+      maxCcn: results.methods
+        .filter((m) => m.file === file)
+        .reduce((max, m) => Math.max(m.ccn, max), 0),
       averageNloc: parseFloat(avgNloc),
       averageCcn: parseFloat(avgCcn),
       averageTokens: parseFloat(avgTokens),
