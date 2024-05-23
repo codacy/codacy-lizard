@@ -1,0 +1,69 @@
+{
+  "name": "codacy-lizard",
+  "description": "Lizard Tool for Codacy",
+  "keywords": [
+    "codacy",
+    "lizard",
+    "linter"
+  ],
+  "homepage": "https://github.com/codacy/codacy-lizard#readme",
+  "bugs": {
+    "url": "https://github.com/codacy/codacy-lizard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codacy/codacy-lizard.git"
+  },
+  "license": "Apache-2.0",
+  "main": "dist/src/index.js",
+  "directories": {
+    "test": "./src/test",
+    "src": "./src"
+  },
+  "scripts": {
+    "build": "tsc --showConfig && tsc",
+    "build:docker": "docker build -t codacy-lizard:dev .",
+    "build:docker:m1": "npm run build:docker -- --platform linux/amd64",
+    "lint": "eslint --fix --ext .ts ./src",
+    "test": "mocha"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ],
+    "src/*.{ts,js,css,json,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": false
+  },
+  "mocha": {
+    "extension": [
+      "ts"
+    ],
+    "require": "ts-node/register",
+    "spec": "src/test/**/*.spec.ts"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "codacy-seed": "2.2.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "10.0.6",
+    "@types/node": "20.12.12",
+    "mocha": "10.4.0",
+    "prettier": "3.2.5",
+    "sort-package-json": "2.10.0"
+  }
+}
