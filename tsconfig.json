@@ -2,10 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "incremental": true,
-    "lib": [
-      "ES6",
-      "DOM"
-    ],
+    "lib": ["ES2021"],
     "module": "CommonJS",
     "noErrorTruncation": true,
     "outDir": "dist",
@@ -15,8 +12,5 @@
     "strict": false,
     "target": "ES6"
   },
-  "include": [
-    "src/**/*.ts",
-    "package.json"
-  ]
+  "include": ["src/**/*.ts", "package.json"]
 }
