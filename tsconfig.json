@@ -17,8 +17,5 @@
     "strict": false,
     "target": "ES2022"
   },
-  "include": [
-    "src/**/*.ts",
-    "package.json"
-  ]
+  "include": ["src/**/*.ts", "package.json"]
 }
