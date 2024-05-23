@@ -1,4 +1,5 @@
-// import { Codacyrc, Parameter, ParameterSpec, Pattern } from "codacy-seed"
+import { Codacyrc, Parameter, ParameterSpec, Pattern } from "codacy-seed"
+import { debug } from "./logging"
 // import { ESLint, Linter } from "eslint"
 // import { existsSync } from "fs-extra"
 // import { cloneDeep, fromPairs, isEmpty, partition } from "lodash"
@@ -10,6 +11,21 @@
 // import { getAllRules, getPluginsName } from "./eslintPlugins"
 // import { DEBUG, debug } from "./logging"
 // import { patternIdToEslint } from "./model/patterns"
+
+interface LizardOptions {
+  files: string[]
+}
+
+export const getLizardOptions = async function (
+  srcDirPath: string,
+  codacyrc: Codacyrc,
+): Promise<LizardOptions> {
+  debug("config: creating")
+
+  return {
+    files: codacyrc.files,
+  }
+}
 
 // export async function createEslintConfig (
 //   srcDirPath: string,

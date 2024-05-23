@@ -1,10 +1,11 @@
 import { Codacyrc, Engine, ToolResult } from "codacy-seed"
 // import fs from "fs"
 
-import { createEslintConfig } from "./configCreator"
+//import { createEslintConfig } from "./configCreator"
 import { convertResults } from "./convertResults"
 import { debug } from "./logging"
 import { toolName } from "./toolMetadata"
+import { getLizardOptions } from "./configCreator"
 
 export const engineImpl: Engine = async function (
   codacyrc?: Codacyrc,
@@ -16,7 +17,7 @@ export const engineImpl: Engine = async function (
   }
 
   const srcDirPath = "/src"
-  const [options, files] = await createEslintConfig(srcDirPath, codacyrc)
+  const { files, ...options } = await getLizardOptions(srcDirPath, codacyrc)
 
   debug(
     `engine: list of ${files.length} files (or globs) to process in "${srcDirPath}" and options used`,

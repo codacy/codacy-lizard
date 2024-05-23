@@ -8,9 +8,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@stylistic/ts/disable-legacy",
-    "plugin:@stylistic/ts/all-extends",
-    "prettier",
+    "plugin:prettier/recommended",
   ],
   globals: {
     Atomics: "readonly",
@@ -39,20 +37,6 @@ module.exports = {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
-    "@stylistic/operator-linebreak": ["error", "before"],
-    "@stylistic/ts/indent": ["error", 2],
-    "@stylistic/indent-binary-ops": ["error", 2],
-    "@stylistic/ts/semi": [
-      "error",
-      "never",
-      { beforeStatementContinuationChars: "never" },
-    ],
-    "@stylistic/multiline-ternary": ["error", "always-multiline"],
-    "@stylistic/ts/object-curly-spacing": [
-      "error",
-      "always",
-      { objectsInObjects: false, arraysInObjects: false },
-    ],
     "@typescript-eslint/no-var-requires": "off",
   },
   overrides: [
