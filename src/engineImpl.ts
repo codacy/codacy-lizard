@@ -1,4 +1,4 @@
-import { Codacyrc, Engine, FileError, Issue, ToolResult } from "codacy-seed"
+import { Codacyrc, Engine, Issue, ToolResult } from "codacy-seed"
 
 import { debug } from "./logging"
 import { toolName } from "./toolMetadata"
