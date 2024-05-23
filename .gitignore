@@ -1,0 +1,9 @@
+.codarcyrc
+.DS_Store
+.eslintcache
+.idea
+.metals
+.vscode
+tsconfig.tsbuildinfo
+/node_modules
+/dist
