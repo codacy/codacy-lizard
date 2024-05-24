@@ -1,35 +1,36 @@
 import { exec } from "child_process"
-import { LizardOptions } from "./configCreator"
 import fs from "fs"
 
+import { LizardOptions } from "./configCreator"
+
 export interface LizardMethodResult {
-  name: string
-  fromLine: number
-  toLine: number
-  file: string
-  nloc: number
-  ccn: number
-  params: number
-  tokens: number
+  "name": string;
+  "fromLine": number;
+  "toLine": number;
+  "file": string;
+  "nloc": number;
+  "ccn": number;
+  "params": number;
+  "tokens": number;
 }
 
 export interface LizardFileResult {
-  file: string
-  nloc: number
-  maxCcn: number
-  averageNloc: number
-  averageCcn: number
-  averageTokens: number
-  methodsCount: number
+  "file": string;
+  "nloc": number;
+  "maxCcn": number;
+  "averageNloc": number;
+  "averageCcn": number;
+  "averageTokens": number;
+  "methodsCount": number;
 }
 
 export interface LizardResults {
-  methods: LizardMethodResult[]
-  files: LizardFileResult[]
+  "methods": LizardMethodResult[];
+  "files": LizardFileResult[];
 }
 
 export const runLizardCommand = (
-  options: LizardOptions,
+  options: LizardOptions
 ): Promise<LizardResults> => {
   // create a file with the list of files to analyze
   const filesList = options.files.join("\n")
@@ -60,76 +61,72 @@ const parseLizardResults = (output: string): LizardResults => {
   const lines = output.split("\n")
 
   const results: LizardResults = {
-    methods: [],
-    files: [],
+    "methods": [],
+    "files": []
   }
 
-  let idx = 0
-  do {
-    idx++
-  } while (!lines[idx].includes("NLOC    CCN   token  PARAM  length  location"))
+  let isMethodSection = false
+  let isFileSection = false
 
-  // methods section found, now iterate until finding the totals line
-  idx += 2
+  lines.forEach(line => {
+    line = line.trim()
 
-  while (idx < lines.length && !lines[idx].includes("file analyzed.")) {
-    const line = lines[idx]
-      .replaceAll(/\s+/g, " ")
-      .replaceAll(/@/g, " ")
-      .trim()
-      .split(" ")
+    if (line.startsWith("===")) {
+      isMethodSection = false
+      isFileSection = false
+    }
+    if (line.startsWith("===") || line.startsWith("---") || line === "" || line.includes("file analyzed")) return
 
-    const [nloc, ccn, tokens, params, length, name, fromToLine, file] = line
-    const [fromLine, toLine] = fromToLine.split("-")
+    if (line.includes("NLOC    CCN   token  PARAM  length  location")) {
+      isMethodSection = true
+      return
+    }
 
-    results.methods.push({
-      name,
-      fromLine: parseInt(fromLine),
-      toLine: parseInt(toLine),
-      file,
-      nloc: parseInt(nloc),
-      ccn: parseInt(ccn),
-      params: parseInt(params),
-      tokens: parseInt(tokens),
-    })
+    if (line.includes("NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file")) {
+      isFileSection = true
+      return
+    }
 
-    idx++
-  }
+    if (isMethodSection) {
+      const lineSplitted = line.replaceAll(/\s+|@/g, " ")
+        .trim()
+        .split(" ")
+      if (lineSplitted.length != 8) return
+      const [nloc, ccn, tokens, params, , name, fromToLine, file] = lineSplitted
+      const [fromLine, toLine] = fromToLine.split("-")
 
-  // find the position of the files section header
-  do {
-    idx++
-  } while (
-    !lines[idx].includes(
-      "NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file",
-    )
-  )
+      results.methods.push({
+        "name": name,
+        "fromLine": parseInt(fromLine),
+        "toLine": parseInt(toLine),
+        "file": file,
+        "nloc": parseInt(nloc),
+        "ccn": parseInt(ccn),
+        "params": parseInt(params),
+        "tokens": parseInt(tokens)
+      })
+    }
+    
+    if (isFileSection) {
+      const lineSplitted = line.replaceAll(/\s+/g, " ")
+        .trim()
+        .split(" ")
+      if (lineSplitted.length != 6) return
+      const [nloc, avgNloc, avgCcn, avgTokens, methodsCount, file] = lineSplitted
 
-  // files section found, now iterate until finding the totals line
-  idx += 2
-
-  while (idx < lines.length && lines[idx].trim() !== "") {
-    const line = lines[idx]
-      .replaceAll(/\s+/g, " ")
-      .trim()
-      .split(" ")
-
-    const [nloc, avgNloc, avgCcn, avgTokens, methodsCount, file] = line
-
-    results.files.push({
-      file,
-      nloc: parseInt(nloc),
-      maxCcn: results.methods
-        .filter((m) => m.file === file)
-        .reduce((max, m) => Math.max(m.ccn, max), 0),
-      averageNloc: parseFloat(avgNloc),
-      averageCcn: parseFloat(avgCcn),
-      averageTokens: parseFloat(avgTokens),
-      methodsCount: parseInt(methodsCount),
-    })
-
-    idx++
-  }
+      results.files.push({
+        file,
+        "nloc": parseInt(nloc),
+        "maxCcn": results.methods
+          .filter((m) => m.file === file)
+          .reduce((max, m) => Math.max(m.ccn, max), 0),
+        "averageNloc": parseFloat(avgNloc),
+        "averageCcn": parseFloat(avgCcn),
+        "averageTokens": parseFloat(avgTokens),
+        "methodsCount": parseInt(methodsCount)
+      })
+    }
+  })
 
   return results
 }

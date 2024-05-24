@@ -8,7 +8,16 @@
           "parameters": [
             {
               "name": "threshold",
-              "value": 1
+              "value": 3
+            }
+          ]
+        },
+        {
+          "patternId": "ccn-critical",
+          "parameters": [
+            {
+              "name": "threshold",
+              "value": 8
             }
           ]
         }

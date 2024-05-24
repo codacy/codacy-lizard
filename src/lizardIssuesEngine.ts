@@ -1,12 +1,11 @@
 import { Codacyrc, Engine, Issue, ToolResult } from "codacy-seed"
 
-import { debug } from "./logging"
-import { toolName } from "./toolMetadata"
-import { LizardOptions, getLizardOptions } from "./configCreator"
+import { getLizardOptions, LizardOptions } from "./configCreator"
 import { runLizardCommand } from "./lizard"
+import { debug } from "./logging"
 
 export const lizardIssuesEngine: Engine = async function (
-  codacyrc?: Codacyrc,
+  codacyrc?: Codacyrc
 ): Promise<ToolResult[]> {
   debug("engine: starting")
 
@@ -22,98 +21,59 @@ const getLizardIssues = async (options: LizardOptions) => {
   const results: Issue[] = []
 
   // get Lizard tool output parsed
-  const data = await runLizardCommand({ ...options, returnMetrics: false })
+  const data = await runLizardCommand({ ...options, "returnMetrics": false })
 
   // iterate over the methods
   data.methods.forEach((method) => {
     // check NLOC rules
-    if (method.nloc > options.thresholds["nloc-critical"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.nloc} lines of code (limit is ${options.thresholds["nloc-critical"]})`,
-          "nloc-critical",
-          method.fromLine,
-        ),
-      )
-    } else if (method.nloc > options.thresholds["nloc-medium"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.nloc} lines of code (limit is ${options.thresholds["nloc-medium"]})`,
-          "nloc-medium",
-          method.fromLine,
-        ),
-      )
-    } else if (method.nloc > options.thresholds["nloc-minor"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.nloc} lines of code (limit is ${options.thresholds["nloc-minor"]})`,
-          "nloc-minor",
-          method.fromLine,
-        ),
-      )
+    const thresholds_nloc = ["nloc-critical", "nloc-medium", "nloc-minor"]
+
+    for (const threshold of thresholds_nloc) {
+      if (method.nloc > options.thresholds[threshold]) {
+        results.push(
+          new Issue(
+            method.file,
+            `Method ${method.name} has ${method.nloc} lines of code (limit is ${options.thresholds[threshold]})`,
+            threshold,
+            method.fromLine
+          )
+        )
+        break
+      }
     }
 
     // check CCN rules
-    if (method.ccn > options.thresholds["ccn-critical"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has a cyclomatic complexity of ${method.ccn} (limit is ${options.thresholds["ccn-critical"]})`,
-          "ccn-critical",
-          method.fromLine,
-        ),
-      )
-    } else if (method.ccn > options.thresholds["ccn-medium"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has a cyclomatic complexity of ${method.ccn} (limit is ${options.thresholds["ccn-medium"]})`,
-          "ccn-medium",
-          method.fromLine,
-        ),
-      )
-    } else if (method.ccn > options.thresholds["ccn-minor"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has a cyclomatic complexity of ${method.ccn} (limit is ${options.thresholds["ccn-minor"]})`,
-          "ccn-minor",
-          method.fromLine,
-        ),
-      )
+    const thresholds_ccn = ["ccn-critical", "ccn-medium", "ccn-minor"]
+
+    for (const threshold of thresholds_ccn) {
+      if (method.ccn > options.thresholds[threshold]) {
+        results.push(
+          new Issue(
+            method.file,
+            `Method ${method.name} has a cyclomatic complexity of ${method.ccn} (limit is ${options.thresholds[threshold]})`,
+            threshold,
+            method.fromLine
+          )
+        )
+        break
+      }
     }
 
     // check parameters count rules
-    if (method.params > options.thresholds["parameter-count-critical"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.params} parameters (limit is ${options.thresholds["parameter-count-critical"]})`,
-          "parameter-count-critical",
-          method.fromLine,
-        ),
-      )
-    } else if (method.params > options.thresholds["parameter-count-medium"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.params} parameters (limit is ${options.thresholds["parameter-count-medium"]})`,
-          "parameter-count-medium",
-          method.fromLine,
-        ),
-      )
-    } else if (method.params > options.thresholds["parameter-count-minor"]) {
-      results.push(
-        new Issue(
-          method.file,
-          `Method ${method.name} has ${method.params} parameters (limit is ${options.thresholds["parameter-count-minor"]})`,
-          "parameter-count-minor",
-          method.fromLine,
-        ),
-      )
+    const thresholds_parameter_count = ["parameter-count-critical", "parameter-count-medium", "parameter-count-minor"]
+
+    for (const threshold of thresholds_parameter_count) {
+      if (method.params > options.thresholds[threshold]) {
+        results.push(
+          new Issue(
+            method.file,
+            `Method ${method.name} has ${method.ccn} parameters (limit is ${options.thresholds[threshold]})`,
+            threshold,
+            method.fromLine
+          )
+        )
+        break
+      }
     }
   })
 
