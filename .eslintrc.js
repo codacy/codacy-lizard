@@ -39,12 +39,13 @@ module.exports = {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
+    "@stylistic/ts/block-spacing": ["error", "always"],
     "@stylistic/operator-linebreak": ["error", "before"],
     "@stylistic/ts/indent": ["error", 2],
     "@stylistic/indent-binary-ops": ["error", 2],
     "@stylistic/ts/semi": ["error", "never", {"beforeStatementContinuationChars": "never"}],
     "@stylistic/multiline-ternary": ["error", "always-multiline"],
-    "@stylistic/ts/object-curly-spacing": ["error", "always", { "objectsInObjects": false, "arraysInObjects": false }],
+    "@stylistic/ts/object-curly-spacing": ["error", "always", { "objectsInObjects": true, "arraysInObjects": true }],
     "@typescript-eslint/no-var-requires": "off"
   },
   overrides: [

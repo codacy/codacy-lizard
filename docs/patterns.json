@@ -1,0 +1,141 @@
+{
+  "name": "lizard",
+  "version": "1.17.10",
+  "patterns": [
+    {
+      "patternId": "nloc-minor",
+      "level": "Info",
+      "category": "CodeComplexity",
+      "title": "Minor NLOC control - Number of Lines of Code (without comments)",
+      "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Minor issue. The default threshold is 20.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 20
+        }
+      ],
+      "enabled": false
+    },
+    {
+      "patternId": "nloc-medium",
+      "level": "Warning",
+      "category": "CodeComplexity",
+      "title": "Medium NLOC control - Number of Lines of Code (without comments)",
+      "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Medium issue. The default threshold is 50.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 50
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "nloc-critical",
+      "level": "Error",
+      "category": "CodeComplexity",
+      "title": "Critical NLOC control - Number of Lines of Code (without comments)",
+      "description": "Check the number of lines of code (without comments) in a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 100.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 100
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "ccn-minor",
+      "level": "Info",
+      "category": "CodeComplexity",
+      "title": "Minor Cyclomatic Complexity control",
+      "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Minor issue. The default threshold is 4.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 4
+        }
+      ],
+      "enabled": false
+    },
+    {
+      "patternId": "ccn-medium",
+      "level": "Warning",
+      "category": "CodeComplexity",
+      "title": "Medium Cyclomatic Complexity control",
+      "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 7.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 7
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "ccn-critical",
+      "level": "Error",
+      "category": "CodeComplexity",
+      "title": "Critical Cyclomatic Complexity control",
+      "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 10.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 10
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "parameter-count-minor",
+      "level": "Info",
+      "category": "CodeComplexity",
+      "title": "Minor Parameter count control",
+      "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Minor issue. The default threshold is 3.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 3
+        }
+      ],
+      "enabled": false
+    },
+    {
+      "patternId": "parameter-count-medium",
+      "level": "Warning",
+      "category": "CodeComplexity",
+      "title": "Medium Parameter count control",
+      "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Medium issue. The default threshold is 5.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 5
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "parameter-count-critical",
+      "level": "Error",
+      "category": "CodeComplexity",
+      "title": "Critical Parameter count control",
+      "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Critical issue. The default threshold is 9.",
+      "timeToFix": 5,
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 9
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
