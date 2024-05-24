@@ -5,7 +5,7 @@ import { runLizardCommand } from "./lizard"
 import { debug } from "./logging"
 
 export const lizardIssuesEngine: Engine = async function (
-  codacyrc?: Codacyrc
+  codacyrc?: Codacyrc,
 ): Promise<ToolResult[]> {
   debug("engine: starting")
 
@@ -21,7 +21,7 @@ const getLizardIssues = async (options: LizardOptions) => {
   const results: Issue[] = []
 
   // get Lizard tool output parsed
-  const data = await runLizardCommand({ ...options, "returnMetrics": false })
+  const data = await runLizardCommand({ ...options, returnMetrics: false })
 
   // iterate over the methods
   data.methods.forEach((method) => {
@@ -35,8 +35,8 @@ const getLizardIssues = async (options: LizardOptions) => {
             method.file,
             `Method ${method.name} has ${method.nloc} lines of code (limit is ${options.thresholds[threshold]})`,
             threshold,
-            method.fromLine
-          )
+            method.fromLine,
+          ),
         )
         break
       }
@@ -52,25 +52,29 @@ const getLizardIssues = async (options: LizardOptions) => {
             method.file,
             `Method ${method.name} has a cyclomatic complexity of ${method.ccn} (limit is ${options.thresholds[threshold]})`,
             threshold,
-            method.fromLine
-          )
+            method.fromLine,
+          ),
         )
         break
       }
     }
 
     // check parameters count rules
-    const thresholds_parameter_count = ["parameter-count-critical", "parameter-count-medium", "parameter-count-minor"]
+    const thresholds_parameter_count = [
+      "parameter-count-critical",
+      "parameter-count-medium",
+      "parameter-count-minor",
+    ]
 
     for (const threshold of thresholds_parameter_count) {
       if (method.params > options.thresholds[threshold]) {
         results.push(
           new Issue(
             method.file,
-            `Method ${method.name} has ${method.ccn} parameters (limit is ${options.thresholds[threshold]})`,
+            `Method ${method.name} has ${method.params} parameters (limit is ${options.thresholds[threshold]})`,
             threshold,
-            method.fromLine
-          )
+            method.fromLine,
+          ),
         )
         break
       }
