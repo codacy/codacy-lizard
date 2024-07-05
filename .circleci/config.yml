@@ -1,7 +1,8 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@12.0.0
+  codacy: codacy/base@12.1.1
+  codacy_plugins_test: codacy/plugins-test@2.0.11
 
 workflows:
   compile_test_deploy:
@@ -15,10 +16,16 @@ workflows:
           persist_to_workspace: true
           requires:
             - codacy/checkout_and_version
+      - codacy_plugins_test/run:
+          name: plugins_test
+          run_multiple_tests: true
+          run_metrics_tests: true
+          requires:
+            - publish_docker_local
       - codacy/publish_docker:
           context: CodacyDocker
           requires:
-            - publish_docker_local
+            - plugins_test
           filters:
             branches:
               only:
