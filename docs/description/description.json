@@ -3,7 +3,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 20
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "nloc-minor",
@@ -15,7 +15,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 50
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "nloc-medium",
@@ -27,7 +27,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 100
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "nloc-critical",
@@ -39,7 +39,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 4
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "ccn-minor",
@@ -51,7 +51,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 7
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "ccn-medium",
@@ -63,7 +63,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 10
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "ccn-critical",
@@ -75,7 +75,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 3
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "parameter-count-minor",
@@ -87,7 +87,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 5
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "parameter-count-medium",
@@ -99,7 +99,7 @@
     "parameters": [
       {
         "name": "threshold",
-        "default": 9
+        "description": "The minimum value upon the issue is being triggered."
       }
     ],
     "patternId": "parameter-count-critical",
