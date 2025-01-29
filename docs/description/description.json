@@ -1,56 +1,110 @@
 [
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 20
+      }
+    ],
     "patternId": "nloc-minor",
     "title": "Minor NLOC control - Number of Lines of Code (without comments)",
-    "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Minor issue. The default threshold is 20."
+    "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Minor issue. The default threshold is 20.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 50
+      }
+    ],
     "patternId": "nloc-medium",
     "title": "Medium NLOC control - Number of Lines of Code (without comments)",
-    "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Medium issue. The default threshold is 50."
+    "description": "Check the number of lines of code (without comments) in a function. If the threshold is not met, raise a Medium issue. The default threshold is 50.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 100
+      }
+    ],
     "patternId": "nloc-critical",
     "title": "Critical NLOC control - Number of Lines of Code (without comments)",
-    "description": "Check the number of lines of code (without comments) in a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 100."
+    "description": "Check the number of lines of code (without comments) in a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 100.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 4
+      }
+    ],
     "patternId": "ccn-minor",
     "title": "Minor Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Minor issue. The default threshold is 4."
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Minor issue. The default threshold is 4.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 7
+      }
+    ],
     "patternId": "ccn-medium",
     "title": "Medium Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 7."
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 7.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 10
+      }
+    ],
     "patternId": "ccn-critical",
     "title": "Critical Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 10."
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 10.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 3
+      }
+    ],
     "patternId": "parameter-count-minor",
     "title": "Minor Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Minor issue. The default threshold is 3."
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Minor issue. The default threshold is 3.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 5
+      }
+    ],
     "patternId": "parameter-count-medium",
     "title": "Medium Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Medium issue. The default threshold is 5."
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Medium issue. The default threshold is 5.",
+    "timeToFix": 5
   },
   {
-    "parameters": [],
+    "parameters": [
+      {
+        "name": "threshold",
+        "default": 9
+      }
+    ],
     "patternId": "parameter-count-critical",
     "title": "Critical Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Critical issue. The default threshold is 9."
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Critical issue. The default threshold is 9.",
+    "timeToFix": 5
   }
 ]
