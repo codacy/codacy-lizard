@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.20 as builder
+FROM node:lts-alpine3.21 as builder
 
 COPY package.json package-lock.json ./
 COPY src src
@@ -9,7 +9,7 @@ COPY tsconfig.json ./
 RUN npm install &&\
     npm run build
 
-FROM python:3.9-alpine3.20
+FROM python:3.9-alpine3.21
 
 RUN pip install lizard &&\
     apk add --no-cache nodejs &&\
