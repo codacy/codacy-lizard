@@ -1,6 +1,6 @@
 #!/bin/sh
 max_ram=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
-max_ram=$((max_ram / 1024 / 1024))
+max_ram=$((2048 / 1024 / 1024))
 old_space_size=$((2048))
 
-exec node --max-old-space-size="$old_space_size" --max-semi-space-size=32 --optimize_for_size --gc_interval=100 --v8-pool-size=0 --use-largepages=silent /dist/src/index.js 
+exec node --max-old-space-size="$old_space_size" --max-semi-space-size=32 --optimize_for_size --gc_interval=100 --v8-pool-size=0 --use-largepages=silent /dist/src/index.js
