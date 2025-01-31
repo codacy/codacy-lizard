@@ -20,15 +20,25 @@
               "value": 8
             }
           ]
+        },
+        {
+          "patternId": "ccn-minor",
+          "parameters": [
+            {
+              "name": "threshold",
+              "value": 0
+            }
+          ]
         }
       ]
     }
   ],
   "files": [
-    "/src/dist/src/configCreator.js",
-    "/src/dist/src/engineImpl.js",
-    "/src/dist/src/lizard.js",
-    "/src/dist/src/lizardIssuesEngine.js",
-    "/src/dist/src/logging.js"
+    "/dist/src/configCreator.js",
+    "/dist/src/engineImpl.js",
+    "/dist/src/lizard.js",
+    "/dist/src/lizardIssuesEngine.js",
+    "/dist/src/lizardMetricsEngine.js",
+    "/dist/src/logging.js"
   ]
 }
