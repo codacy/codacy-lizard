@@ -1,5 +1,5 @@
 #!/bin/sh
-max_ram=$(cat /sys/fs/cgroup/memory/memory.limit_in_bytes)
+
 max_ram=$((2048 / 1024 / 1024))
 old_space_size=$((2048))
 

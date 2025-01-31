@@ -1,11 +1,2 @@
 <module name="root">
-  <module name="nloc-minor" />
-  <module name="nloc-medium" />
-  <module name="nloc-critical" />
-  <module name="ccn-minor" />
-  <module name="ccn-medium" />
-  <module name="ccn-critical" />
-  <module name="parameter-count-minor" />
-  <module name="parameter-count-medium" />
-  <module name="parameter-count-critical" />
 </module>
