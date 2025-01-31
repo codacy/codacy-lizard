@@ -1,2 +1,5 @@
 <module name="root">
+    <module name="ccn-medium">
+        <property name="threshold" value="3" />
+    </module>
 </module>
