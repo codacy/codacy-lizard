@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <checkstyle version="4.3">
-  <file name="all-patterns.ts">
+  <file name="zumba.ts">
     <error source="ccn-minor" line="42" message="Method (anonymous) has a cyclomatic complexity of 3 (limit is 1)" severity="info" />
   </file>
 </checkstyle>
