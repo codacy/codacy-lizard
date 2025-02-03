@@ -34,11 +34,6 @@
     }
   ],
   "files": [
-    "/dist/src/configCreator.js",
-    "/dist/src/engineImpl.js",
-    "/dist/src/lizard.js",
-    "/dist/src/lizardIssuesEngine.js",
-    "/dist/src/lizardMetricsEngine.js",
-    "/dist/src/logging.js"
+    "/src/gguf-py/gguf/gguf_writer.py"
   ]
 }
