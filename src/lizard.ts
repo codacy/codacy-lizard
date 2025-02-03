@@ -2,6 +2,7 @@ import { exec } from "child_process"
 import fs from "fs"
 
 import { LizardOptions } from "./configCreator"
+import { debug } from "./logging"
 
 export interface LizardMethodResult {
   "name": string;
@@ -39,15 +40,23 @@ export const runLizardCommand = (
 
   // run lizard command
   return new Promise((resolve, reject) => {
-    exec(`lizard -f ${filesListPath}`, (error, stdout, stderr) => {
-      if (error) {
-        reject(error)
-      }
-      if (stderr) {
-        reject(stderr)
+    exec(`lizard -V -f ${filesListPath}`, (error, stdout, stderr) => {
+
+      if (stdout.trim()) {
+        // If stdout has content, resolve with the parsed results
+        return resolve(parseLizardResults(stdout))
       }
 
-      resolve(parseLizardResults(stdout))
+      // If there's no useful stdout but there's an error, reject
+      if (error) {
+        return reject(error)
+      }
+      if (stderr) {
+        return reject(stderr)
+      }
+
+      // Fallback: If neither stdout nor errors are meaningful, reject
+      reject(new Error("Unknown error: No stdout and command failed"));
     })
   })
 }
