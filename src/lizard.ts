@@ -49,10 +49,10 @@ export const runLizardCommand = (
 
       // If there's no useful stdout but there's an error, reject
       if (error) {
-        return reject(error);
+        return reject(error)
       }
       if (stderr) {
-        return reject(stderr);
+        return reject(stderr)
       }
 
       // Fallback: If neither stdout nor errors are meaningful, reject
