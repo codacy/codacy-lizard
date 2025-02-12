@@ -1,5 +1,20 @@
 # codacy-lizard
 
+This is the docker engine we use at Codacy to have [lizard](https://github.com/terryyin/lizard) support.
+You can also create a docker to integrate the tool and language of your choice!
+Check the **Docs** section for more information.
+
+## Docs
+
+[Tool Developer Guide](https://support.codacy.com/hc/en-us/articles/207994725-Tool-Developer-Guide)
+
+[Tool Developer Guide - Using Scala](https://support.codacy.com/hc/en-us/articles/207280379-Tool-Developer-Guide-Using-Scala)
+
+## Test
+
+We use the [codacy-plugins-test](https://github.com/codacy/codacy-plugins-test) to test our external tools integration.
+You can follow the instructions there to make sure your tool is working as expected.
+
 ## What is Codacy
 
 [Codacy](https://www.codacy.com/) is an Automated Code Review Tool that monitors your technical debt, helps you improve your code quality, teaches best practices to your developers, and helps you save time in Code Reviews.
