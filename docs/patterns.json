@@ -30,7 +30,7 @@
           "default": 50
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "nloc-critical",
@@ -57,7 +57,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 4
+          "default": 5
         }
       ],
       "enabled": false
@@ -72,10 +72,10 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 7
+          "default": 8
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "ccn-critical",
@@ -87,7 +87,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 10
+          "default": 12
         }
       ],
       "enabled": true
@@ -102,7 +102,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 3
+          "default": 4
         }
       ],
       "enabled": false
@@ -117,10 +117,10 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 5
+          "default": 8
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "parameter-count-critical",
@@ -132,7 +132,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 9
+          "default": 12
         }
       ],
       "enabled": true
