@@ -30,7 +30,7 @@
           "default": 50
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "nloc-critical",
@@ -45,7 +45,7 @@
           "default": 100
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "ccn-minor",
@@ -75,7 +75,7 @@
           "default": 8
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "ccn-critical",
@@ -90,7 +90,7 @@
           "default": 12
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "parameter-count-minor",
@@ -120,7 +120,7 @@
           "default": 8
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "parameter-count-critical",
@@ -135,7 +135,7 @@
           "default": 12
         }
       ],
-      "enabled": true
+      "enabled": false
     }
   ]
 }
