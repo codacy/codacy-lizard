@@ -30,7 +30,7 @@
           "default": 50
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "nloc-critical",
@@ -75,7 +75,7 @@
           "default": 7
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "ccn-critical",
@@ -120,7 +120,7 @@
           "default": 5
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "parameter-count-critical",
