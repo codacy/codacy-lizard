@@ -9,7 +9,7 @@ COPY tsconfig.json ./
 RUN npm install &&\
     npm run build
 
-FROM python:3.9.21-alpine3.21
+FROM python:3.9-alpine3.21
 
 RUN pip install lizard &&\
     apk add --no-cache nodejs &&\
