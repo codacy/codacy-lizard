@@ -12,7 +12,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 20
+          "default": 50
         }
       ],
       "enabled": false
@@ -27,7 +27,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 50
+          "default": 80
         }
       ],
       "enabled": false
@@ -42,7 +42,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 100
+          "default": 150
         }
       ],
       "enabled": true
@@ -57,7 +57,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 4
+          "default": 5
         }
       ],
       "enabled": false
@@ -72,7 +72,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 7
+          "default": 10
         }
       ],
       "enabled": false
@@ -87,7 +87,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 10
+          "default": 15
         }
       ],
       "enabled": true
@@ -102,7 +102,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 3
+          "default": 4
         }
       ],
       "enabled": false
@@ -117,7 +117,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 5
+          "default": 7
         }
       ],
       "enabled": false
@@ -132,7 +132,7 @@
       "parameters": [
         {
           "name": "threshold",
-          "default": 9
+          "default": 10
         }
       ],
       "enabled": true
