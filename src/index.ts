@@ -1,5 +1,5 @@
 import { run } from "codacy-seed"
 
-import { lizardIssuesEngine } from "./lizardIssuesEngine"
+import { lizardMetricsEngine } from "./lizardMetricsEngine"
 
-run(lizardIssuesEngine)
+run(lizardMetricsEngine)

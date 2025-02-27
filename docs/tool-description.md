@@ -1,1 +1,0 @@
-Lizard is an extensible Cyclomatic Complexity Analyzer for many programming languages. [Learn more](https://github.com/terryyin/lizard)

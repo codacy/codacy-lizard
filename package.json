@@ -1,5 +1,5 @@
 {
-  "name": "codacy-lizard",
+  "name": "codacy-metrics-lizard",
   "version": "1.0.0",
   "author": "Codacy",
   "description": "Lizard Tool for Codacy.",
@@ -8,13 +8,13 @@
     "lizard",
     "linter"
   ],
-  "homepage": "https://github.com/codacy/codacy-lizard#readme",
+  "homepage": "https://github.com/codacy/codacy-metrics-lizard#readme",
   "bugs": {
-    "url": "https://github.com/codacy/codacy-lizard/issues"
+    "url": "https://github.com/codacy/codacy-metrics-lizard/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codacy/codacy-lizard.git"
+    "url": "git+https://github.com/codacy/codacy-metrics-lizard.git"
   },
   "license": "Apache-2.0",
   "main": "dist/src/index.js",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build": "tsc --showConfig && tsc",
-    "build:docker": "docker build -t codacy-lizard:dev .",
+    "build:docker": "docker build -t codacy-metrics-lizard:dev .",
     "build:docker:m1": "npm run build:docker -- --platform linux/amd64",
     "lint": "eslint --fix --ext .ts ./src",
     "test": "mocha",

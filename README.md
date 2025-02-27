@@ -1,4 +1,4 @@
-# codacy-lizard
+# codacy-metrics-lizard
 
 This is the docker engine we use at Codacy to have [lizard](https://github.com/terryyin/lizard) support.
 You can also create a docker to integrate the tool and language of your choice!

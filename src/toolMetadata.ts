@@ -1,1 +1,1 @@
-export const toolName = "lizard"
+export const toolName = "metrics-lizard"

@@ -5,6 +5,6 @@ export interface LineComplexity {
 
 export interface FileComplexity {
   "filename": string;
-  "complexity": number; // this should be the maximum complexity found in the file
+  "complexity": number; // this should be the sum of method complexities found in a file
   "lineComplexities": LineComplexity[];
 }
