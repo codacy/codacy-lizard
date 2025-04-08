@@ -81,5 +81,26 @@ const getLizardIssues = async (options: LizardOptions) => {
     }
   })
 
+  data.files.forEach((file) => {
+    // check File NLOC rules
+    const thresholds_file_nloc = ["file-nloc-critical", "file-nloc-medium", "file-nloc-minor"]
+
+    for (const threshold of thresholds_file_nloc) {
+      if (file.nloc > options.thresholds[threshold]) {
+        results.push(
+          new Issue(
+            file.file,
+            `File ${file.file} has ${file.nloc} non-commenting lines of code`,
+            threshold,
+            1,
+          ),
+        )
+        break
+      }
+    }
+
+
+  })
+
   return results
 }

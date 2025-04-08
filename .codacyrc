@@ -29,6 +29,15 @@
               "value": 0
             }
           ]
+        },
+        {
+          "patternId": "file-nloc-minor",
+          "parameters": [
+            {
+              "name": "threshold",
+              "value": 100
+            }
+          ]
         }
       ]
     }

@@ -2,7 +2,6 @@ import { exec } from "child_process"
 import fs from "fs"
 
 import { LizardOptions } from "./configCreator"
-import { debug } from "./logging"
 
 export interface LizardMethodResult {
   "name": string;
