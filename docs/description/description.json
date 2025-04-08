@@ -44,7 +44,7 @@
     ],
     "patternId": "ccn-minor",
     "title": "Minor Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Minor issue. The default threshold is 4.",
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Minor issue. The default threshold is 5.",
     "timeToFix": 5
   },
   {
@@ -56,7 +56,7 @@
     ],
     "patternId": "ccn-medium",
     "title": "Medium Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 7.",
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 8.",
     "timeToFix": 5
   },
   {
@@ -68,7 +68,7 @@
     ],
     "patternId": "ccn-critical",
     "title": "Critical Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 10.",
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Critical issue. The default threshold is 12.",
     "timeToFix": 5
   },
   {
@@ -80,7 +80,7 @@
     ],
     "patternId": "parameter-count-minor",
     "title": "Minor Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Minor issue. The default threshold is 3.",
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Minor issue. The default threshold is 4.",
     "timeToFix": 5
   },
   {
@@ -92,7 +92,7 @@
     ],
     "patternId": "parameter-count-medium",
     "title": "Medium Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Medium issue. The default threshold is 5.",
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Medium issue. The default threshold is 8.",
     "timeToFix": 5
   },
   {
@@ -104,7 +104,43 @@
     ],
     "patternId": "parameter-count-critical",
     "title": "Critical Parameter count control",
-    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Critical issue. The default threshold is 9.",
+    "description": "Check the number of parameters sent to a function. If the threshold is not met, raise a Critical issue. The default threshold is 12.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [
+      {
+        "name": "threshold",
+        "description": "The minimum value upon the issue is being triggered."
+      }
+    ],
+    "patternId": "file-nloc-minor",
+    "title": "Minor File NLOC control - Number of Lines of Code (without comments)",
+    "description": "Check the number of lines of code (without comments) in a file. If the threshold is not met, raise a Minor issue. The default threshold is 300.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [
+      {
+        "name": "threshold",
+        "description": "The minimum value upon the issue is being triggered."
+      }
+    ],
+    "patternId": "file-nloc-medium",
+    "title": "Medium File NLOC control - Number of Lines of Code (without comments)",
+    "description": "Check the number of lines of code (without comments) in a file. If the threshold is not met, raise a Medium issue. The default threshold is 500.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [
+      {
+        "name": "threshold",
+        "description": "The minimum value upon the issue is being triggered."
+      }
+    ],
+    "patternId": "file-nloc-critical",
+    "title": "Critical File NLOC control - Number of Lines of Code (without comments)",
+    "description": "Check the number of lines of code (without comments) in a file. If the threshold is not met, raise a Critical issue. The default threshold is 1000.",
     "timeToFix": 5
   }
 ]

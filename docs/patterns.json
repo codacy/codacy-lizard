@@ -109,6 +109,42 @@
         }
       ],
       "enabled": false
+    },
+    {
+      "patternId": "file-nloc-minor",
+      "level": "Info",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 300
+        }
+      ],
+      "enabled": false
+    },
+    {
+      "patternId": "file-nloc-medium",
+      "level": "Warning",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 500
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "patternId": "file-nloc-critical",
+      "level": "Error",
+      "category": "Complexity",
+      "parameters": [
+        {
+          "name": "threshold",
+          "default": 1000
+        }
+      ],
+      "enabled": false
     }
   ]
 }
