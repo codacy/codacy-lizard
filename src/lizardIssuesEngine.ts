@@ -90,7 +90,7 @@ const getLizardIssues = async (options: LizardOptions) => {
         results.push(
           new Issue(
             file.file,
-            `File ${file.file} has ${file.nloc} non-commenting lines of code`,
+            `File ${file.file} has ${file.nloc} non-comment lines of code`,
             threshold,
             1,
           ),
