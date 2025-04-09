@@ -11,7 +11,7 @@ RUN npm install &&\
 
 FROM python:3.9-alpine3.21
 
-RUN pip install lizard &&\
+RUN pip install lizard==1.17.10 &&\
     apk add --no-cache nodejs &&\
     adduser -u 2004 -D docker &&\
     mkdir /codacy &&\
