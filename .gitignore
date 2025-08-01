@@ -7,3 +7,7 @@
 tsconfig.tsbuildinfo
 /node_modules
 /dist
+
+
+#Ignore vscode AI rules
+.github/copilot-instructions.md
