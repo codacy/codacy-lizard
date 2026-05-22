@@ -2,7 +2,7 @@
 <checkstyle version="4.3">
   <file name="all-patterns.ts">
     <error source="ccn-minor" line="42" message="Method (anonymous) has a cyclomatic complexity of 3 (limit is 1)" severity="info" />
-    <error source="nloc-medium" line="71" message="Method (anonymous) has a cyclomatic complexity of 12 (limit is 8)" severity="warning" />
-    <error source="ccn-medium" line="71" message="Method (anonymous) has 52 lines of code (limit is 50)" severity="warning" />
+    <error source="nloc-medium" line="71" message="Method (anonymous) has 52 lines of code (limit is 50)" severity="warning" />
+    <error source="ccn-medium" line="71" message="Method (anonymous) has a cyclomatic complexity of 12 (limit is 8)" severity="warning" />
   </file>
 </checkstyle>
