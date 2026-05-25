@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.23 as builder
+FROM node:lts-alpine3.23 AS builder
 
 COPY package.json package-lock.json ./
 COPY src src
