@@ -1,6 +1,6 @@
 {
   "name": "lizard",
-  "version": "1.17.31",
+  "version": "1.22.2",
   "patterns": [
     {
       "patternId": "nloc-minor",

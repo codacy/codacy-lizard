@@ -11,3 +11,5 @@ tsconfig.tsbuildinfo
 
 #Ignore vscode AI rules
 .github/copilot-instructions.md
+
+.github/instructions/codacy.instructions.md
