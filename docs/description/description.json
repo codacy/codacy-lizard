@@ -56,7 +56,7 @@
     ],
     "patternId": "ccn-medium",
     "title": "Medium Cyclomatic Complexity control",
-    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is not met, raise a Medium issue. The default threshold is 15.",
+    "description": "Check the Cyclomatic Complexity value of a function or logic block. If the threshold is exceeded, raise a Medium issue. The default threshold is 15.",
     "timeToFix": 5
   },
   {
