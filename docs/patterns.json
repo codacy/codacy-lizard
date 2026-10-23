@@ -12,7 +12,7 @@
           "default": 20
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     {
       "patternId": "nloc-medium",
@@ -24,7 +24,7 @@
           "default": 50
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "nloc-critical",
