@@ -12,7 +12,7 @@
           "default": 20
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "nloc-medium",
