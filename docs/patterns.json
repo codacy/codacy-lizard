@@ -24,7 +24,7 @@
           "default": 50
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     {
       "patternId": "nloc-critical",
